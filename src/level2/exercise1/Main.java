@@ -1,10 +1,10 @@
-package nivell_2.exercici_1;
+package level2.exercise1;
 
-import nivell_2.exercici_1.exceptions.CustomizedException;
-import nivell_2.exercici_1.utils.Input;
+import level2.exercise1.exceptions.CustomizedException;
+import level2.exercise1.utils.Input;
 
 public class Main {
-    public static void main(String[] args) throws CustomizedException {
+    public static void main(String[] args){
 
         System.out.println("Valor introduït: " + Input.readByte("Introdueix la teva edad: "));
         System.out.println("Valor introduït: " + Input.readInt("Entra un valor enter entre -2147483648 i 2147483647: "));
@@ -13,8 +13,5 @@ public class Main {
         System.out.println("Valor introduït: " + Input.readChar("Entra un caràcter: "));
         System.out.println("Valor introduït: " + Input.readString("Entra un text: "));
         System.out.println("Valor introduït: " + Input.readYesNo("Introdueix \"s\" per True o \"n\" per False:"));
-
-
-        System.out.println("Programa finalitzat.");
     }
 }

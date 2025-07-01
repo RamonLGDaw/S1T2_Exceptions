@@ -1,40 +1,70 @@
-## Nivell 1
+# Sprint 1 Task 4 - Exception
 
-### Exercici 1
+This repository contains exercises focused on learning and practicing exception handling in Java.
 
-Crea una classe anomenada "Producte" amb els atributs nom i preu, i una altra classe anomenada "Venda". Aquesta classe té com a atributs una col·lecció de productes i el preu total de la venda.
+Technologies used:
+- JDK 17
+- IntelliJ IDEA
+- Git
 
-La classe "Venda" té un mètode anomenat `calcularTotal()` que llança l’excepció personalitzada "VendaBuidaException" i mostra per pantalla “Per fer una venda primer has d’afegir productes” si la col·lecció de productes està buida. Si la col·lecció té productes, llavors ha de recórrer la col·lecció i guardar la suma de tots els preus dels productes a l’atribut preu total de la venda.
+## Introduction
 
-L’excepció personalitzada "VendaBuidaException" ha de ser filla de la classe Exception. Al seu constructor li hem de passar el missatge “Per fer una venda primer has d’afegir productes” i quan capturem l’excepció, l’hem de mostrar per pantalla amb el mètode `getMessage()` de l’excepció.
+The objective of these exercises is to learn and practice exception handling in Java. You'll encounter custom exceptions, handle input mismatches, and work with real-world Java scenarios that require robust error handling mechanisms.
 
-Escriu el codi necessari per a generar i capturar una excepció de tipus "IndexOutOfBoundsException".
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. **Clone the repository**:
+ git clone  https://github.com/RamonLGDaw/S1T2_Exceptions.git
+
+2. **Open the project in IntelliJ IDEA**:
+- Launch IntelliJ IDEA.
+- Select "Open" and navigate to the directory where you cloned the repository.
+- Open the project.
+
+3. **Build and run the project**:
+- Ensure you are using JDK 17.
+- Use the Run configurations in IntelliJ IDEA to execute the exercises.
+
+## Level 1
+
+### Exercise 1
+
+Create a class named "Product" with attributes `name` and `price`, and another class named "Sale". This class has attributes such as a collection of products and the total price of the sale.
+
+The "Sale" class has a method called `calculateTotal()` that throws a custom exception "EmptySaleException" and prints "To make a sale, you must first add products" if the collection of products is empty. If there are products in the collection, it should iterate through them and store the sum of all product prices in the total price attribute of the sale.
+
+The custom exception "EmptySaleException" should extend the `Exception` class. Its constructor should accept the message "To make a sale, you must first add products", and when catching the exception, it should display the message using the `getMessage()` method of the exception.
+
+Write the necessary code to generate and catch an `IndexOutOfBoundsException`.
 
 ---
 
-## Nivell 2
+## Level 2
 
-### Exercici 1
+### Exercise 1
 
-Crea una classe anomenada "Entrada". Aquesta classe ha de servir per controlar les diferents excepcions que poden aparèixer en Java a l’hora d’introduir dades per teclat utilitzant la classe Scanner.
+Create a class named "InputHandler". This class is designed to handle various exceptions that can occur in Java when reading input from the keyboard using the `Scanner` class.
 
-El primer que s’ha de fer és instanciar un objecte de la classe Scanner i a partir d’aquí, crear mètodes estàtics per llegir els diferents tipus de dades des del teclat.
+Start by instantiating an object of the `Scanner` class and then create static methods to read different data types from the keyboard.
 
 **Important**
 
-És important que si en algun mètode salta una excepció, la tractem i tornem a demanar la dada a l’usuari/ària fins que aquesta estigui ben introduïda. Per exemple: Si introdueix un float amb un punt en lloc d’una coma, ha de mostrar “Error de format”. Fins que l’usuari/ària no introdueix un float ben format ha de seguir demanant la dada.
+It's crucial that if an exception is thrown in any method, it is handled, and the user is prompted again until the input is correctly entered. For example, if the user enters a float with a period instead of a comma, it should display "Format error". The method should continue to prompt the user until a correctly formatted float is entered.
 
-Tots els mètodes reben un String amb el missatge que es vol mostrar a l’usuari/ària, per exemple: “Introdueix la teva edat”, i retornen la dada oportuna introduïda per l’usuari/ària en cada mètode, per exemple: un byte amb l’edat de l’usuari/ària.
+All methods receive a `String` message to display to the user, e.g., "Enter your age", and return the appropriate data type entered by the user in each method, e.g., a `byte` representing the user's age.
 
-**Mètodes a implantar capturant l’excepció de la classe "InputMismatchException":**
+**Methods to implement capturing `InputMismatchException`:**
 
-- `public static byte llegirByte(String missatge);`
-- `public static int llegirInt(String missatge);`
-- `public static float llegirFloat(String missatge);`
-- `public static double llegirDouble(String missatge);`
+- `public static byte readByte(String message);`
+- `public static int readInt(String message);`
+- `public static float readFloat(String message);`
+- `public static double readDouble(String message);`
 
-**Mètodes a implantar capturant una excepció personalitzada de la classe Exception:**
+**Methods to implement capturing a custom `Exception` class:**
 
-- `public static char llegirChar(String missatge);`
-- `public static String llegirString(String missatge);`
-- `public static boolean llegirSiNo(String missatge);`, si l’usuari/ària introdueix “s”, retorna “true”, si l’usuari/ària introdueix “n”, retorna “false”.
+- `public static char readChar(String message);`
+- `public static String readString(String message);`
+- `public static boolean readYesNo(String message);`, if the user enters "y", return `true`; if the user enters "n", return `false`.
+

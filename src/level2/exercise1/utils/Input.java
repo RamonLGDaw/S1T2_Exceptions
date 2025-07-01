@@ -1,6 +1,6 @@
-package nivell_2.exercici_1.utils;
+package level2.exercise1.utils;
 
-import nivell_2.exercici_1.exceptions.CustomizedException;
+import level2.exercise1.exceptions.CustomizedException;
 
 import java.util.InputMismatchException;
 import java.util.Locale;
@@ -26,10 +26,13 @@ public class Input {
 
 
     public static int readInt(String message) {
+
         while (true) {
             try {
                 System.out.println(message);
-                return sc.nextInt();
+                int result = sc.nextInt();
+                sc.nextLine();
+                return result;
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
@@ -43,7 +46,9 @@ public class Input {
         while (true) {
             try {
                 System.out.println(message);
-                return sc.nextFloat();
+                float result = sc.nextFloat();
+                sc.nextLine();
+                return result;
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
@@ -55,10 +60,13 @@ public class Input {
 
 
     public static double readDouble(String message) {
+
         while (true) {
             try {
                 System.out.println(message);
-                return sc.nextDouble();
+                double inputValue = sc.nextDouble();
+                sc.nextLine();
+                return inputValue;
 
             } catch (InputMismatchException e) {
                 sc.nextLine();
@@ -69,14 +77,16 @@ public class Input {
     }
 
 
-    public static char readChar(String message) throws CustomizedException {
+    public static char readChar(String message) {
+
         while (true) {
             try {
                 System.out.println(message);
-                String input = sc.nextLine();
+                String inputValue = sc.nextLine();
+                inputValue = inputValue.trim();
 
-                if (input.length() == 1) {
-                    return input.charAt(0);
+                if (inputValue.length() == 1) {
+                    return inputValue.charAt(0);
 
                 } else {
                     throw new CustomizedException("Error de format. Entra només un caràcter.");
@@ -88,7 +98,7 @@ public class Input {
     }
 
 
-    public static String readString(String message) throws CustomizedException {
+    public static String readString(String message) {
 
         while (true) {
             try {
@@ -109,7 +119,7 @@ public class Input {
     }
 
 
-    public static boolean readYesNo(String message) throws CustomizedException {
+    public static boolean readYesNo(String message) {
         while (true) {
             try {
                 System.out.println(message);
