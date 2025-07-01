@@ -1,4 +1,4 @@
-# Sprint 1 Task 4 - Exception
+# Sprint 1 Task 4 - Exceptions
 
 This repository contains exercises focused on learning and practicing exception handling in Java.
 
